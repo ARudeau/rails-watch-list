@@ -1,10 +1,17 @@
-<h1>Lists</h1>
-<% @lists.each do |list| %>
-<ul class="list-group list-group-flush">
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <%= link_to list.name, list_path(list), class: "text-decoration-none" %>
-    <i class="fa-regular fa-trash-can"></i>
-  </li>
-</ul>
-<% end %>
-<%= link_to "+ Add a list", new_list_path(@list), class: "text-decoration-none" %>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+url(https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+ <h1>Save all your movies into lists</h1>
+</div>
+
+<p class="blockquote text-end shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+ <%= link_to "+ Add a list", new_list_path(@list), class: "btn btn-success" %>
+</p>
+
+<div class="cards">
+  <% @lists.each do |list| %>
+    <div class="list-card">
+      <%= link_to list.name, list_path(list), class: "text-decoration-none text-secondary" %>
+    </div>
+  <% end %>
+</div>

@@ -1,16 +1,21 @@
-<div>
-<h1><%= @list.name %></h1>
-<%= link_to "Add a Bookmark", new_list_bookmark_path(@list) %>
-<%= link_to "See all lists", lists_path, class: "text-decoration-none" %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url('<% if @list.poster.attached? %>
+<%= cl_image_path @list.poster.key, height: 300, crop: :fill %>
+<% end %>')">
+  <h1><%= @list.name %></h1>
 </div>
-<p><strong>Movies bookmarked</strong></p>
-<ul class="list-group">
-  <% @list.bookmarks.each do |bookmark| %>
-    <li class="list-group-item">
-      <%= bookmark.movie.title %>
-      <%= bookmark.comment %>
+
+<ul class="list-inline">
+  <li class="list-inline-item"><%= link_to "Add a Bookmark", new_list_bookmark_path(@list), class: "btn btn-success" %></li>
+  <li class="list-inline-item"><%= link_to "See all lists", lists_path, class: "btn btn-info" %></li>
+</ul>
+    <% @list.bookmarks.each do |bookmark| %>
+<div class="card-product">
+      <%= image_tag bookmark.movie.poster_url, height: 100, crop: :fill %>
+  <div class="card-product-infos">
+      <h2><%= bookmark.movie.title %></h2>
+      <p><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %> <i class="fa-solid fa-quote-right"></i></p>
       <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
-
-  <% end %>
-    </li>
+  </div>
+</div>
+    <% end %>

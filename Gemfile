@@ -70,5 +70,6 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 gem "sassc-rails"
-gem "rest-client"
-gem "dotenv-rails"
+gem "rest-client" # For the seed
+# gem "dotenv-rails" # For the seed
+gem "cloudinary"
