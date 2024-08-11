@@ -1,17 +1,21 @@
-
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
 url(https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
- <h1>Save all your movies into lists</h1>
+ <h1>Save any kind of movies</h1>
 </div>
 
-<p class="blockquote text-end shadow-sm p-3 mb-5 bg-body-tertiary rounded">
- <%= link_to "+ Add a list", new_list_path(@list), class: "btn btn-success" %>
-</p>
-
-<div class="cards">
-  <% @lists.each do |list| %>
-    <div class="list-card">
-      <%= link_to list.name, list_path(list), class: "text-decoration-none text-secondary" %>
-    </div>
-  <% end %>
+<div class="home-container">
+  <div class="d-flex justify-content-between my-4">
+    <h2>My lists</h2>
+    <%= link_to "Create a movie list", new_list_path(@list), class: "btn btn-success btn-lg text-light" %>
+  </div>
+  <div class="bookmarks-cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        <% if list.poster.attached? %>
+          url('<%= cl_image_path list.poster.key %>')
+        <% end %>">
+        <%= link_to list.name, list_path(list), class: "textd-decoration-none " %>
+      </div>
+    <% end %>
+  </div>
 </div>

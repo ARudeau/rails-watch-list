@@ -1,7 +1,8 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 280px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,30 +10,15 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 5px;
-}
-.list-card {
-  background-size: cover;
-  text-decoration: none;
-  background-position: center;
-  text-align: center;
-  height: 75px;
-  margin: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    color: white;
+  }
 }
 
 .card-product {
@@ -40,31 +26,28 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-}
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 3px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  infos {
+    padding: 16px;
+  }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 3px;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
 }
