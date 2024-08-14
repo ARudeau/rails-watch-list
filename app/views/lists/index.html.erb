@@ -8,7 +8,7 @@ url(https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=2076&aut
     <h2>My lists</h2>
     <%= link_to "Create a movie list", new_list_path(@list), class: "btn btn-success btn-lg text-light" %>
   </div>
-  <div class="bookmarks-cards">
+  <div class="bookmarks-cards mb-3">
     <% @lists.each do |list| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
         <% if list.poster.attached? %>

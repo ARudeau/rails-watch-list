@@ -25,7 +25,6 @@
 #  puts "#{movie.title}"
 # end
 
-
 # generate 35 Movies
 # (1..35).each do |movie|
 #   Movie.create!(

@@ -36,13 +36,36 @@ url('<%= cl_image_path @list.poster.key, crop: :fill %>')
       </div>
     </div>
     <% end %>
-  </div>
-  <div class="form-control bg-white my-3">
-  <a id="book"><h2 class="text-center">Add a movie</h2></a>
+  <div class="card-trip form-control">
+  <a id="book"><h2 class="text-center mt-1">Add a movie to your watchlist</h2></a>
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
     <%= f.association :movie, label_method: :title, value_method: :id, include_blank: false %>
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success text-light" %>
   <% end %>
   </div>
+  </div>
+
+  <hr>
+
+    <div class="row">
+      <ul class="col list-group list-group-flush">
+    <h2>Reviews</h2>
+        <% @list.reviews.each do |review| %>
+          <li class="list-group-item">
+            <%= review.comment %>
+            <%= review.rating %>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="col form-control bg-white ">
+        <a id="book"><h3 class="text-start">Add a review</h3></a>
+        <%= simple_form_for [@list, @review] do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :rating %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
 </div>
