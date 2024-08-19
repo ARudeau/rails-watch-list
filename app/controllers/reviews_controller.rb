@@ -30,6 +30,6 @@ class ReviewsController < ApplicationController
     @list = List.find(params[:list_id])
   end
   def review_params
-    params.require(:review).permit(:comment, :movie_id)
+    params.require(:review).permit(:comment, :rating)
   end
 end
