@@ -73,3 +73,4 @@ gem "sassc-rails"
 gem "rest-client" # For the seed
 # gem "dotenv-rails" # For the seed
 gem "cloudinary"
+

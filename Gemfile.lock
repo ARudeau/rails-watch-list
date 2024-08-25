@@ -75,6 +75,7 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    aos (0.1.0)
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -308,6 +309,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  aos (~> 0.1.0)
   autoprefixer-rails
   bootsnap
   bootstrap (~> 5.2)

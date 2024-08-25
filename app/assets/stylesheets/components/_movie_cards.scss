@@ -1,8 +1,6 @@
 .movie-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr ;
   gap: 20px;
-
 }
 .card-trip {
   overflow: hidden;
@@ -32,7 +30,7 @@
     display: flex;
     padding: 10px;
     justify-content: space-between;
-   
+
 
 
   }
@@ -49,9 +47,6 @@
     }
   }
 }
-
-
-
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .movie-cards {
